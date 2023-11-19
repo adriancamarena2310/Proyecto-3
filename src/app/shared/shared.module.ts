@@ -6,6 +6,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { SearchBoxComponent } from './components/searchBox/searchBox.component';
+import { CountriesModule } from '../countries/countries.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { SearchBoxComponent } from './components/searchBox/searchBox.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
   ],exports:[
     HomePageComponent,
     AboutPageComponent,
