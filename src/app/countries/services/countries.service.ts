@@ -17,4 +17,21 @@ export class CountriesService {
       catchError( error =>  of ([]))
     );
   }
+
+serachCountry( term: string): Observable<Country[]>{
+  const url = `${this.apiUrl}/name/${ term }`;
+  return this.http.get<Country[]>( url ).
+  pipe(
+    catchError( error =>  of ([]))
+  );
+}
+
+serachRegion( region: string): Observable<Country[]>{
+  const url = `${this.apiUrl}/region/${ region }`;
+  return this.http.get<Country[]>( url ).
+  pipe(
+    catchError( error =>  of ([]))
+  );
+}
+
 }

@@ -1,15 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { CountriesService } from '../../services/countries.service';
+import { Country } from '../../interfaces/country';
 
 @Component({
   selector: 'app-byCountryPage',
-  templateUrl: './byCountryPage.component.html',
-  styleUrls: ['./byCountryPage.component.css']
+  templateUrl: './byCountryPage.component.html'
 })
-export class ByCountryPageComponent implements OnInit {
+export class ByCountryPageComponent {
 
-  constructor() { }
 
-  ngOnInit() {
+  public countries: Country[] = [];
+
+  constructor(private countriesServices: CountriesService) { }
+
+  searcByCountry( term: string ):void{
+    this.countriesServices.serachCountry(term)
+    .subscribe( countries =>{
+      this.countries = countries;
+    });
   }
-
 }
