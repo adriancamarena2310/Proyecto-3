@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-byCapitalPage',
   templateUrl: './byCapitalPage.component.html'
 })
-export class ByCapitalPageComponent implements OnInit {
+export class ByCapitalPageComponent  {
 
   constructor() { }
 
-  ngOnInit() {
+  searcByCapitla( term: string ):void{
+    console.log("desde byCapitalPage");
+    console.log( {term});
   }
-
 }
