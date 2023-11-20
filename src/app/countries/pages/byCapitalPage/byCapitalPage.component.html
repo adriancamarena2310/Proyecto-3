@@ -14,7 +14,7 @@
 <div class="row">
   <div class="col">
     <hr>
-    <shared-loadingSpiner></shared-loadingSpiner>
+    <shared-loadingSpiner *ngIf="isLoading"></shared-loadingSpiner>
 
     <countries-Table [countries]="countries"></countries-Table>
 
