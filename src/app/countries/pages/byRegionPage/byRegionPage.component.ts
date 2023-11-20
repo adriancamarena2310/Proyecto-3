@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { CountriesService } from '../../services/countries.service';
 import { Country } from '../../interfaces/country';
 
+type Region = 'Africa' | 'America' | 'Asia' | 'Europe' | 'Oceania';
+
 @Component({
   selector: 'app-byRegionPage',
   templateUrl: './byRegionPage.component.html'
@@ -9,11 +11,15 @@ import { Country } from '../../interfaces/country';
 export class ByRegionPageComponent {
 
   public countries: Country[] = [];
+  public regions: Region[] = ['Africa','America','Asia','Europe','Oceania'];
+  public selectedRegion?: Region;
 
   constructor(private countriesServices: CountriesService) { }
 
-  searcByRegion( term: string ):void{
-    this.countriesServices.serachRegion(term)
+  searcByRegion( region: Region ):void{
+    this.selectedRegion = region
+
+    this.countriesServices.serachRegion( region )
     .subscribe( countries =>{
       this.countries = countries;
     });
